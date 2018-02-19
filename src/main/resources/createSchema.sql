@@ -1,0 +1,27 @@
+CREATE TABLESPACE tut_perm_01
+DATAFILE 'tut_perm_01.dat'
+SIZE 64M
+REUSE
+AUTOEXTEND ON NEXT 32M;
+
+
+CREATE TEMPORARY TABLESPACE tut_temp_01
+TEMPFILE 'tut_temp_01.dbf'
+SIZE 16M
+AUTOEXTEND ON NEXT 8M;
+
+
+CREATE USER TUT
+IDENTIFIED BY TUT
+DEFAULT TABLESPACE tut_perm_01
+TEMPORARY TABLESPACE tut_temp_01
+QUOTA 128M on tut_perm_01;
+
+
+GRANT create session TO TUT;
+GRANT create table TO TUT;
+GRANT create view TO TUT;
+GRANT create any trigger TO TUT;
+GRANT create any procedure TO TUT;
+GRANT create sequence TO TUT;
+GRANT create synonym TO TUT;

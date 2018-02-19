@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="hibernate-bug">
+		
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+			<property name="hibernate.connection.username" value="TUT"/>
+			<property name="hibernate.connection.password" value="TUT"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.generate_statistics" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="" />
+		
+		</properties>
+	
+	</persistence-unit>
+</persistence>
